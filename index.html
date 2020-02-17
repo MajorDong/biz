@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="libs/glide/glide.core.min.css">
+  <link rel="stylesheet" href="libs/glide/glide.theme.min.css">
+  <link rel="stylesheet" href="style/style.css">
+  <title>BIZ</title>
+</head>
+<body>
+  <header>
+    <div class="logo">小沈科技</div>
+    <nav class="nav">
+      <a href="#">首页</a>
+      <a href="#">关于我们</a>
+      <a href="#">成功案例</a>
+      <a href="#">服务流程</a>
+      <a href="#">团队介绍</a>
+      <a href="#">公司动态</a>
+      <i class="fas fa-search"></i>
+    </nav>
+    <div class="bars">
+      <i class="fa fa-bars" aria-hidden="true"></i> 
+    </div>
+  </header>
+  <main>
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <div class="glide__slides">
+          <div class="glide__slide">
+            <div class="slide-caption">
+              <h1>创新人生，科技未来</h1>
+              <h3>用科技和创新拥抱经济的未来</h3>
+              <button class="btn">探索更多</button>
+            </div>
+            <div class="banner"></div>
+            <img src="images/people-in-couch-1024248.jpg" alt="people-in-couch">
+          </div>
+          <div class="glide__slide">
+            <div class="slide-caption left">
+              <h1>科学改变世界</h1>
+              <h3>凝聚科技创业，成就创新梦想</h3>
+              <button class="btn">探索更多</button>
+            </div>
+            <div class="banner"></div>
+            <video src="videos/working-man.mp4" muted autoplay loop></video>
+          </div>
+        </div>
+      </div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+          <
+        </button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+          >
+        </button>
+      </div>
+      <div class="glide__bullets" data-glide-el="controls[nav">
+        <button class="glide__bullet" data-glide-dir="0"></button>
+        <button class="glide__bullet" data-glide-dir="1"></button>
+      </div>
+    </div>
+  </main>
+
+  <script src="./libs/anime/anime.min.js"></script>
+  <script src="./libs/glide/glide.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
