@@ -20,11 +20,12 @@ img{
 }
 
 header {
-  width: 100%;
-  height: 80px;
+  width: 100vw;
+  height: 72px;
   display: grid;
   padding: 0 40px;
-  position: fixed;
+  position: absolute;
+  top: 0;
   grid-template-columns: 1fr 2fr;
   align-items: center;
   z-index: 300;
@@ -48,8 +49,28 @@ header .nav a{
 header .bars{
   display: none;
 }
+@keyframes dropDown{
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+header.sticky{
+  position: fixed;
+  background-color: white;
+  box-shadow: 0 0 18px rgba(0,0,0,0.2);
+  animation: dropDown 0.3s linear forwards;
+}
+header.sticky .logo,
+header.sticky nav a,
+header.sticky nav i{
+  color: var(--text-color-darker);
+}
 
 
+/*轮播*/
 .glide__slide img,
 .glide__slide video{
   width: 100vw;
@@ -482,7 +503,7 @@ footer {
 }
 /* 返回顶部按钮，默认不显示 */
 .scrollToTop {
-  display: block;
+  display: none;
   position: relative;
   z-index: 300;
 }

@@ -1,3 +1,28 @@
+
+window.addEventListener('scroll',()=>{
+  const wrapTop = document.querySelector('.contentWrap').offsetTop
+  const scrollToTop = document.querySelector('.scrollToTop')
+  if(window.scrollY > wrapTop){
+    document.querySelector('header').classList.add('sticky')
+  }else{
+    document.querySelector('header').classList.remove('sticky')
+  }
+
+  if(window.scrollY > 1700){
+    scrollToTop.style.display = 'block'
+  }else{
+    scrollToTop.style.display = 'none'
+  }
+})
+
+document.querySelector('.scrollToTop').onclick = ()=>{
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}
+
+
 const glide = new Glide('.glide')
 const captionEles = document.querySelectorAll('.slide-caption')
 
@@ -24,7 +49,6 @@ const isotope = new Isotope('.cases',{
   layoutMode: 'fitRows',
   itemSelector: '.case-item'
 })
-
 const filterBtns = document.querySelectorAll('.filter-btns') //[]
 filterBtns.forEach((btn)=>{
   btn.addEventListener('click', (e)=>{
@@ -39,5 +63,7 @@ filterBtns.forEach((btn)=>{
     }
   })
 })
+
+
 
 
