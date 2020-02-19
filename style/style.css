@@ -372,3 +372,57 @@ section {
   font-size: 18px;
   font-weight: 500;
 }
+
+/*公司动态*/
+.history{
+  padding-top: 100px;
+}
+.history-items{
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+.history-item{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+}
+.history-item .year{
+  display: flex;
+  order: 2;
+  text-align: center;
+  flex-basis: 110px;
+  font-size: 28px;
+  background: linear-gradient(to right,#fff 49%,#000 20%,#fff 50%);
+}
+.year span{
+  font-size: 20px;
+  padding: 10px;
+  margin: auto;
+  background: blue;
+}
+.history-item .text{
+  order: 3;
+  text-align: center;
+  padding: 20px;
+  width: 80%;
+  color: #fff;
+  background-color: #fc5795;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+@media (min-width:640px){
+  .history-item .text,
+  .history-item .custom{
+    width: 40%;
+  }
+  .history-right .text{
+    order: 1;
+  }
+  .history-right .custom{
+    order: 3;
+  }
+
+}
