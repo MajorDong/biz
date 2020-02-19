@@ -426,3 +426,77 @@ section {
   }
 
 }
+
+/*footer*/
+footer {
+  margin-top: 124px;
+  background-color: #181818;
+  display: grid;
+  justify-items: center;
+  padding-top: 72px;
+  padding-bottom: 24px;
+}
+.footer-menus {
+  width: 100%;
+  max-width: 1180px;
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  padding: 0 80px;
+  position: relative;
+}
+.footer-menu {
+  justify-self: end;
+}
+.menu-title {
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.contact-us {
+  justify-self: start;
+  color: var(--text-color-lightest);
+}
+.contact-us p:not(:first-child) {
+  padding-bottom: 16px;
+}
+.menu-items li {
+  list-style: none;
+  padding-bottom: 8px;
+}
+.menu-items li a {
+  text-decoration: none;
+  font-weight: 300;
+  color: var(--text-color-lightest);
+}
+.icp-info {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.icp-info,
+.rights {
+  grid-column: 1 / -1;
+  justify-self: center;
+  color: white;
+}
+/* 返回顶部按钮，默认不显示 */
+.scrollToTop {
+  display: block;
+  position: relative;
+  z-index: 300;
+}
+.scrollToTop a {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  position: fixed;
+  bottom: 60px;
+  right: 30px;
+}
