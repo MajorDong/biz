@@ -102,3 +102,15 @@ window.addEventListener('scroll',()=>{
     bgPositionContr(bottom)
   }
 })
+
+const theScroll = new SmoothScroll('nav a',{
+  header: "header",
+  offset: -10,
+})
+const glideBtnEl = document.querySelectorAll('.glide .btn')
+glideBtnEl.forEach( el =>{
+  el.addEventListener('click',()=>{
+    const targetTo = document.querySelector('#about')
+    theScroll.animateScroll(targetTo)
+  })
+} )
