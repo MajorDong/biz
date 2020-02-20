@@ -8,7 +8,7 @@ img{
   max-width: 100%;
 }
 :root {
-  --primary-color: #ff434f;
+  --primary-color: #61baf1;
   --secondary-color: #e3e3e3;
   --text-color-lightest: #e7e9ec;
   --text-color-darker: #2e2e2e;
@@ -122,13 +122,19 @@ header.sticky nav i{
 }
 .slide-caption .btn {
   padding: 13px 27px;
-  background-color: var(--primary-color);
   color: var(--text-color-lightest);
   border-radius: 5px;
-  border: none;
+  border: 2px solid var(--text-color-lightest);
+  background: rgba(0,0,0,0);
   font-size: 18px;
   cursor: pointer;
   outline: none;
+}
+.slide-caption .btn:hover,
+.slide-caption .btn:active{
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transition: all 0.3s;
 }
 
 /* 内容区域 */
@@ -173,6 +179,7 @@ section {
   grid-template-rows: 126px 126px;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 5vw;
+  row-gap: 2vw;
 }
 .feature{
   display: grid;
@@ -427,15 +434,16 @@ section {
   font-size: 20px;
   padding: 10px;
   margin: auto;
-  background: blue;
+  color: white;
+  background: #18273e;
 }
 .history-item .text{
   order: 3;
   text-align: center;
   padding: 20px;
   width: 80%;
-  color: #fff;
-  background-color: #fc5795;
+  color: #18273e;
+  background-color: var(--primary-color);
   border-radius: 25px;
   margin-bottom: 20px;
 }
@@ -456,7 +464,7 @@ section {
 /*footer*/
 footer {
   margin-top: 124px;
-  background-color: #181818;
+  background-color: #142740;
   display: grid;
   justify-items: center;
   padding-top: 72px;
