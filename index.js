@@ -114,3 +114,20 @@ glideBtnEl.forEach( el =>{
     theScroll.animateScroll(targetTo)
   })
 } )
+
+//根据页面高亮nav
+const disEls = document.querySelectorAll('[data-d]')
+let minIndex = 0
+window.addEventListener('scroll',()=>{
+  disEls.forEach((el,index)=>{
+    if(Math.abs(disEls[index].getBoundingClientRect().top) < Math.abs(disEls[minIndex].getBoundingClientRect().top)){
+      //console.log(disEls[index].id)
+      const aTags = document.querySelectorAll('.nav a')
+      aTags.forEach(el =>{
+        el.classList.remove('active')
+      })
+      aTags[index].classList.add('active')
+      minIndex = index
+    }
+  })
+})

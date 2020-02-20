@@ -46,6 +46,11 @@ header .nav a{
   text-decoration: none;
   margin: 0 17px;
 }
+header .nav a.active,
+header .nav a:hover,
+header .nav a:active{
+  color: var(--primary-color)
+}
 header .bars{
   display: none;
 }
