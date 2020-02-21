@@ -1,4 +1,4 @@
-
+//sticky header
 window.addEventListener('scroll',()=>{
   const wrapTop = document.querySelector('.contentWrap').offsetTop
   const scrollToTop = document.querySelector('.scrollToTop')
@@ -22,7 +22,7 @@ document.querySelector('.scrollToTop').onclick = ()=>{
   })
 }
 
-
+//glide
 const glide = new Glide('.glide')
 const captionEles = document.querySelectorAll('.slide-caption')
 
@@ -45,6 +45,7 @@ glide.on(['mount.after','run.after'], ()=>{
 })
 glide.mount()
 
+//isotope
 const isotope = new Isotope('.cases',{
   layoutMode: 'fitRows',
   itemSelector: '.case-item'
@@ -64,7 +65,7 @@ filterBtns.forEach((btn)=>{
   })
 })
 
-
+//scroll reveal
 const staggeringOption = {
   delay: 300,
   distance: '50px',
@@ -74,6 +75,7 @@ const staggeringOption = {
 ScrollReveal().reveal('.feature',{...staggeringOption, interval: 350})
 ScrollReveal().reveal('.service-item',{...staggeringOption, interval: 350})
 
+//data区域
 const dataEl = document.querySelector('.data')
 function bgPositionContr(bottom){
   let bottomDi = bottom / 7
@@ -94,7 +96,6 @@ ScrollReveal().reveal('.data',{
     bgPositionContr(bottom)
   }
 })
-
 window.addEventListener('scroll',()=>{
   let { top, bottom } = dataEl.getBoundingClientRect()
   //判断是否在可见区域
@@ -103,6 +104,7 @@ window.addEventListener('scroll',()=>{
   }
 })
 
+//缓动滚动
 const theScroll = new SmoothScroll('nav a',{
   header: "header",
   offset: -10,
@@ -130,4 +132,16 @@ window.addEventListener('scroll',()=>{
       minIndex = index
     }
   })
+})
+
+//导航按钮
+const barsEl = document.querySelector('.bars')
+const headerEl = document.querySelector('header')
+barsEl.addEventListener('click',()=>{
+  headerEl.classList.toggle('open')
+})
+document.addEventListener('scrollStart', ()=>{
+  if(headerEl.classList.contains('open')){
+    headerEl.classList.remove('open')
+  }
 })

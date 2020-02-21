@@ -71,7 +71,10 @@ header.sticky{
 header.sticky .logo,
 header.sticky nav a,
 header.sticky nav i{
-  color: var(--text-color-darker);
+  color: #18273e;
+}
+header.sticky .bars{
+  color: #18273e;
 }
 
 
@@ -179,7 +182,7 @@ section {
   grid-template-rows: 126px 126px;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 5vw;
-  row-gap: 2vw;
+  row-gap: 2vwk;
 }
 .feature{
   display: grid;
@@ -271,7 +274,7 @@ section {
 }
 .service-item{
   display: grid;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 60px 1fr;
   grid-template-columns: 60px 1fr;
   grid-template-areas: 
     "icon title"
@@ -447,7 +450,7 @@ section {
   border-radius: 25px;
   margin-bottom: 20px;
 }
-@media (min-width:640px){
+@media (min-width:800px){
   .history-item .text,
   .history-item .custom{
     width: 40%;
@@ -533,4 +536,103 @@ footer {
   position: fixed;
   bottom: 60px;
   right: 30px;
+}
+
+/*响应式*/
+@media (max-width: 1100px) {
+  header .nav{
+    display: none;
+  }
+  header .bars{
+    display: block;
+    position: relative;
+    z-index: 500;
+    color: var(--text-color-lightest);
+    font-size: 23px;
+    justify-self: end;
+    cursor: pointer;
+  }
+  header.open .nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    background-color: #18273e;
+    padding-right: 100px;
+    opacity: 0;
+    animation: slideDown 0.6s ease-out forwards;
+  }
+  header.open .bars{
+    color: white;
+  }
+  header.open .nav a{
+    margin-bottom: 20px;
+    font-size: 27px;
+    color: white;
+  }
+  header.open .nav a.active,
+  header.open .nav a:hover,
+  header.open .nav a:active{
+  color: var(--primary-color)
+}
+  @keyframes slideDown {
+   from {
+    height: 0;
+    opacity: 0;
+   }
+   to {
+     height: 100vh;
+     opacity: 1;
+   }
+  }
+  
+  .team-members{
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 30px;
+  }
+  .services,
+  .features{
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 30px;
+  }
+  .service-item,
+  .feature{
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 1fr 2fr; 
+    grid-area: 
+    'icon title'
+    'content content';
+  }
+  .feature-content{
+    justify-self: start;
+  }
+}
+@media(max-width: 992px){
+  .slide-caption h1{
+    font-size: 37px;
+  }
+  .slide-caption h3{
+    font-size: 18px;
+  }
+  .data{
+    grid-template-columns: repeat(2, minmax(200px,auto));
+    grid-column: repeat(2 ,1fr);
+  }
+  .data-piece .fas{
+    font-size: 30px;
+  }
+  .data-piece .num{
+    margin-top: 20px;
+    font-size: 27px;
+  }
+  .data-piece .data-desc{
+    font-size: 13px;
+    font-weight: 500;
+  }
 }
