@@ -541,7 +541,20 @@ footer {
 /*响应式*/
 @media (max-width: 1100px) {
   header .nav{
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 0vh;
+    color: #18273e;
+    background-color: #18273e;
+    padding-right: 100px;
+    opacity: 0;
+    transition: all 0.6s ease;
   }
   header .bars{
     display: block;
@@ -565,16 +578,22 @@ footer {
     color: white;
     background-color: #18273e;
     padding-right: 100px;
-    opacity: 0;
-    animation: slideDown 0.6s ease-out forwards;
+    opacity: 1;
+    transition: all 0.6s ease-in;
   }
+
+    
   header.open .bars{
     color: white;
+  }
+  header .nav a{
+    opacity: 0;
   }
   header.open .nav a{
     margin-bottom: 20px;
     font-size: 27px;
     color: white;
+    opacity: 1;
   }
   header.open .nav a.active,
   header.open .nav a:hover,
@@ -582,15 +601,16 @@ footer {
   color: var(--primary-color)
 }
   @keyframes slideDown {
-   from {
+   0% {
     height: 0;
     opacity: 0;
    }
-   to {
+   100% {
      height: 100vh;
      opacity: 1;
    }
   }
+
   
   .team-members{
     grid-template-columns: repeat(2,1fr);
