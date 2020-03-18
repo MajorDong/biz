@@ -45,11 +45,33 @@ header .nav a{
   color: var(--text-color-lightest);
   text-decoration: none;
   margin: 0 17px;
+  position: relative;
+}
+
+header .nav a.active::after{
+  display: block;
+  content: '';
+  height: 4px;
+  background-color: var(--primary-color);
+  width: 0%;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 10px;
+  animation: highLine 0.3s linear forwards;
+}
+@keyframes highLine{
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 header .nav a.active,
 header .nav a:hover,
 header .nav a:active{
-  color: var(--primary-color)
+  color: var(--primary-color);
 }
 header .bars{
   display: none;
